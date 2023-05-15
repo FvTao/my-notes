@@ -187,8 +187,6 @@
 
     ```nginx
     server {
-      	# listen 443 ssl;				
-      	# server_name smallpic.dludora.xyz;
     	listen 80;					   			# 在云服务器上配置安全组，开放80端口(监听http默认80端口)
       	server_name xxx.xxx.xxx.xxx;		   	# 云服务器的公网IP地址
         charset utf-8;
@@ -215,14 +213,11 @@
             index index.html index.htm;
             try_files $uri $uri/ /index.html;
         }
-     
-        # 以下是配置域名的，暂时不考虑
-        # ssl_certificate /etc/nginx/cert/9360524_smallpic.dludora.xyz.pem;
-        # ssl_certificate_key /etc/nginx/cert/9360524_smallpic.dludora.xyz.key;
-        # ssl_session_timeout 5m;
-        # ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
-        # ssl_protocols TLSv1.1 TLSv1.2 TLSv1.3;
-        # ssl_prefer_server_ciphers on;
+        
+        # 如果想要将请求转发给其他服务器可以添加如下配置
+        location /proxy {
+            proxy_pass http://xxx.xxx.xxx.xxx;
+        }
     }
     
     ```
