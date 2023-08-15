@@ -1,0 +1,19 @@
+pycharm
+
+# -*- coding: utf-8 -*-
+# @Time    : ${DATE} ${TIME}
+# @Author  : ${AUTHOR}
+# @File    : ${NAME}.py
+# @Software: ${PRODUCT_NAME} 
+# @Comment :
+
+
+
+clion
+
+// -*- coding: utf-8 -*-
+// @Time    : ${DATE} ${TIME}
+// @Author  : ${AUTHOR}
+// @File    : ${NAME}.py
+// @Software: ${PRODUCT_NAME} 
+// @Comment :

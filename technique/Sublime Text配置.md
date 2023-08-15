@@ -42,11 +42,11 @@
     ]
     ```
 
-## 二、systemverilog环境配置
+## 二、systemverilog/verilog环境配置
 
-### 1.1 配置systemverilog语法高亮
+### 1.1 配置systemverilog/verilog语法高亮
 
-- 安装SystemVerilog
+- 安装SystemVerilog/Verilog
 
 ### 1.2 安装开发辅助工具
 
@@ -82,6 +82,8 @@
     ```
 
 ### 1.3 配置语法解析
+
+#### 1.3.1 verilator语法解析
 
 - 安装SublimeLinter-contrib-verilator
 
@@ -215,6 +217,73 @@
                     ["Suggest casez", "casex"]
                 ]
             }
+        }
+    }
+    ```
+
+
+#### 1.3.2 vivado语法解析
+
+-   安装SublimeLinter-contrib-xsim
+
+-   在SublimeLinter设置中配置verilator路径，下面是一个例子
+
+    ```json
+    // SublimeLinter Settings - User
+    {
+    	// "debug": true,
+    	
+    	// SublimeLinter Settings - User
+    	"paths": {
+           "linux": [
+           	"/usr/local/Xilinx/Vivado/2019.2/bin"
+           ],
+           "osx": [],
+           "windows": [],
+        },
+        "linters": {
+            "xvlog": {
+                "args": ["--relax"],
+                "working_dir": "${TEMP:${project_path:${folder:$file_path}}}",
+            },
+            "xvlog_sv": {
+                "args": ["--relax"],
+                "working_dir": "${TEMP:${project_path:${folder:$file_path}}}",
+            },
+            "xvhdl": {
+                "args": ["--relax"],
+                "working_dir": "${TEMP:${project_path:${folder:$file_path}}}",
+            }
+        },
+    }
+    ```
+
+-   可以在项目设置中引入所有的include文件所在目录
+
+    ```json
+    // .sublime-project
+    {
+        "folders":
+        [
+            {
+                "path": "."
+            }
+        ],
+        "settings": {
+            // SublimeLinter-contrib-xsim
+            "SublimeLinter.linters.xvlog.args":[
+                "-i", "$project_path/PATH_TO_HEADER_0",
+                "-i", "$project_path/PATH_TO_HEADER_1",
+                "--relax"
+            ],
+            "SublimeLinter.linters.xvlog_sv.args":[
+                "-i", "$project_path/PATH_TO_HEADER_0",
+                "-i", "$project_path/PATH_TO_HEADER_1",
+                "--relax"
+            ],
+            "SublimeLinter.linters.xvhdl.args":[
+                "--relax"
+            ]
         }
     }
     ```
