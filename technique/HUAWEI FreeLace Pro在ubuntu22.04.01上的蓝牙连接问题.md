@@ -1,4 +1,4 @@
-# HUAWEI FreeLace Pro在ubuntu22.04上的蓝牙连接问题
+# HUAWEI FreeLace Pro在ubuntu22.04.01上的蓝牙连接问题
 
 - 可能是因为ubnutu缺少一个模块
 
