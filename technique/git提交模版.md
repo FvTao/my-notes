@@ -38,7 +38,6 @@ Git在提交时如果需要以指定的格式提交，可以给Git配置一个�
 # <footer>
 # 
 # types:
-#
 # feat:     A new feature 
 # fix:      A bug fix 
 # docs:     Documentation only changes 
