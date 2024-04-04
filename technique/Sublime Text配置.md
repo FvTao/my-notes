@@ -226,7 +226,7 @@
 
 -   安装SublimeLinter-contrib-xsim
 
--   在SublimeLinter设置中配置verilator路径，下面是一个例子
+-   在SublimeLinter设置中配置xvlog路径，下面是一个例子
 
     ```json
     // SublimeLinter Settings - User
